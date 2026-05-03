@@ -119,8 +119,8 @@ const Hero = () => {
               ref={imgRef}
               src="/images/hero-cartoon.png" 
               alt="Developer Character" 
-              className="w-full max-w-[550px] h-auto object-contain relative z-10 drop-shadow-[0_20px_60px_rgba(139,92,246,0.4)]"
-              style={{ maskImage: 'radial-gradient(ellipse 75% 75% at center, black 50%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse 75% 75% at center, black 50%, transparent 100%)' }}
+              className="w-full max-w-[550px] h-auto object-contain relative z-10 drop-shadow-[0_20px_60px_rgba(139,92,246,0.4)] opacity-85"
+              style={{ maskImage: 'radial-gradient(circle at center, black 40%, transparent 65%)', WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 65%)' }}
             />
           </div>
         </figure>

@@ -157,8 +157,8 @@ const Contact = () => {
                 ref={characterRef}
                 src="/images/contact-cartoon.png" 
                 alt="Contact Character" 
-                className="w-full max-w-[450px] h-auto object-contain relative z-10 drop-shadow-[0_15px_50px_rgba(139,92,246,0.35)] p-6"
-                style={{ maskImage: 'radial-gradient(ellipse 75% 75% at center, black 50%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse 75% 75% at center, black 50%, transparent 100%)' }}
+                className="absolute inset-0 w-full h-full object-cover z-10 drop-shadow-[0_15px_50px_rgba(139,92,246,0.35)] opacity-85 scale-110"
+                style={{ maskImage: 'radial-gradient(ellipse 80% 80% at center, black 50%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse 80% 80% at center, black 50%, transparent 100%)' }}
               />
             </div>
           </div>
