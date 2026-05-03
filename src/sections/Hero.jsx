@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -5,15 +6,55 @@ import AnimatedCounter from "../components/AnimatedCounter";
 import Button from "../components/Button";
 import { words } from "../constants";
 import { developerInfo } from "../data/projects";
-import HeroExperience from "../components/models/hero_models/HeroExperience";
 
 const Hero = () => {
+  const imgRef = useRef(null);
+  const glowRef = useRef(null);
+
   useGSAP(() => {
+    // Text entrance animation
     gsap.fromTo(
       ".hero-text h1",
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
     );
+
+    // Hero image entrance - scale up from small
+    gsap.fromTo(
+      imgRef.current,
+      { scale: 0.6, opacity: 0, y: 80 },
+      { scale: 1, opacity: 1, y: 0, duration: 1.2, ease: "back.out(1.7)", delay: 0.5 }
+    );
+
+    // Continuous floating animation
+    gsap.to(imgRef.current, {
+      y: -15,
+      duration: 2.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: 1.7
+    });
+
+    // Glow pulse animation
+    gsap.to(glowRef.current, {
+      opacity: 0.6,
+      scale: 1.15,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+
+    // Subtle rotation wobble
+    gsap.to(imgRef.current, {
+      rotateZ: 2,
+      duration: 4,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: 1.7
+    });
   });
 
   return (
@@ -51,8 +92,8 @@ const Hero = () => {
               <h1>that Deliver Results</h1>
             </div>
 
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m {developerInfo.name}. {developerInfo.role}
+            <p className="text-white-50 text-base md:text-xl relative z-10 pointer-events-none">
+              Hi, I'm {developerInfo.name}. {developerInfo.role}
             </p>
 
             <Button
@@ -66,10 +107,21 @@ const Hero = () => {
           </div>
         </header>
 
-        {/* RIGHT: 3D Model or Visual */}
-        <figure>
-          <div className="hero-3d-layout">
-            <HeroExperience />
+        {/* RIGHT: Cartoon Character */}
+        <figure className="flex items-center justify-center xl:w-[45%] w-full mt-10 xl:mt-0 relative z-20">
+          <div className="relative">
+            {/* Glow effect behind character */}
+            <div 
+              ref={glowRef}
+              className="absolute inset-0 bg-gradient-to-r from-violet-600/30 via-blue-500/20 to-purple-600/30 rounded-full blur-[80px] scale-110"
+            />
+            <img 
+              ref={imgRef}
+              src="/images/hero-cartoon.png" 
+              alt="Developer Character" 
+              className="w-full max-w-[550px] h-auto object-contain relative z-10 drop-shadow-[0_20px_60px_rgba(139,92,246,0.4)]"
+              style={{ maskImage: 'radial-gradient(ellipse 75% 75% at center, black 50%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse 75% 75% at center, black 50%, transparent 100%)' }}
+            />
           </div>
         </figure>
       </div>

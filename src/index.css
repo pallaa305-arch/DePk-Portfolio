@@ -293,6 +293,16 @@ section {
 
 
 
+.floating-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
 @layer utilities {
   .flex-center {
     @apply flex justify-center items-center;
@@ -382,7 +392,7 @@ section {
     }
 
     .logo {
-      @apply text-white-50 text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
+      @apply text-white-50 text-base md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
     }
 
     nav.desktop {
@@ -409,7 +419,7 @@ section {
       @apply flex;
 
       .inner {
-        @apply px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300;
+        @apply px-3 py-1.5 md:px-5 md:py-2 text-sm md:text-base rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300;
 
         span {
           @apply group-hover:text-white transition-colors duration-300;
@@ -660,28 +670,27 @@ section {
 
 /* marquee */
 .marquee {
-  width: 100dvw;
+  width: 100%;
   overflow: hidden;
   position: relative;
+  display: flex;
 }
 .marquee-box {
   display: flex;
   align-items: center;
-  width: 200%;
+  width: max-content;
   height: 100%;
-  position: absolute;
-  overflow: hidden;
   animation: marquee 60s linear infinite;
 }
-.marquee-item {
-  float: left;
+.marquee-box:hover {
+  animation-play-state: paused;
 }
 @keyframes marquee {
   0% {
-    left: 0;
+    transform: translateX(0);
   }
   100% {
-    left: -100%;
+    transform: translateX(calc(-50% - 10px));
   }
 }
 /* marquee end */

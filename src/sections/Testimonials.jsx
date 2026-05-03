@@ -18,7 +18,7 @@ const Testimonials = () => {
           <div className="marquee h-[400px] md:h-[350px]">
             <div className="marquee-box gap-5">
               {testimonials.map((testimonial, index) => (
-                <div key={`first-${index}`} className="w-[350px] sm:w-[450px] flex-none">
+                <div key={`first-${index}`} className="w-[300px] sm:w-[450px] flex-none">
                   <GlowCard card={testimonial} index={index}>
                     <div className="flex items-center gap-3">
                       <div>
@@ -33,7 +33,7 @@ const Testimonials = () => {
                 </div>
               ))}
               {testimonials.map((testimonial, index) => (
-                <div key={`second-${index}`} className="w-[350px] sm:w-[450px] flex-none">
+                <div key={`second-${index}`} className="w-[300px] sm:w-[450px] flex-none">
                   <GlowCard card={testimonial} index={index}>
                     <div className="flex items-center gap-3">
                       <div>

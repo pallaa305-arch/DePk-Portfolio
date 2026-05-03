@@ -1,4 +1,3 @@
-import { Loader } from "@react-three/drei";
 import Testimonials from "./sections/Testimonials";
 import Footer from "./sections/Footer";
 import Contact from "./sections/Contact";
@@ -33,7 +32,6 @@ function WhatsAppFAB() {
 export default function App() {
   return (
     <>
-      <Loader />
       <Navbar />
       <Hero />
       <AboutMe />

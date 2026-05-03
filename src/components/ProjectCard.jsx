@@ -36,15 +36,6 @@ export default function ProjectCard({ project, index }) {
           >
             <GithubIcon />
           </a>
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-8 h-8 flex items-center justify-center rounded-lg bg-indigo-600/90 text-white backdrop-blur-sm hover:bg-indigo-500 transition-colors"
-            aria-label={`View ${project.title} live demo`}
-          >
-            <ExternalLink size={14} />
-          </a>
         </div>
       </div>
 
@@ -74,16 +65,11 @@ export default function ProjectCard({ project, index }) {
         </div>
 
         {/* Live demo button */}
-        <a
-          href={project.liveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          id={`project-${project.id}-demo-btn`}
-          className="mt-1 flex items-center justify-center gap-2 w-full py-2.5 text-sm font-medium text-indigo-400 border border-indigo-500/30 rounded-xl hover:bg-indigo-500/10 hover:text-indigo-300 hover:border-indigo-400/50 transition-all duration-200 touch-target"
+        <span
+          className="mt-1 flex items-center justify-center gap-2 w-full py-2.5 text-sm font-medium text-slate-500 border border-slate-700/30 rounded-xl cursor-not-allowed opacity-60"
         >
-          <ExternalLink size={13} />
-          Live Demo
-        </a>
+          🚧 Coming Soon
+        </span>
       </div>
     </article>
   );
