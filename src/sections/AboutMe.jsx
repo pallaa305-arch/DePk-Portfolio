@@ -75,6 +75,7 @@ const AboutMe = () => {
                   id="about-photo"
                   src="/images/profile.png"
                   alt="DePk KaTaRia"
+                  loading="lazy"
                   className="w-full h-full object-cover object-center"
                 />
               </div>

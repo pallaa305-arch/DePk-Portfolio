@@ -59,6 +59,7 @@ const TechStack = () => {
                   <img 
                     src={techStackIcon.imgPath} 
                     alt={techStackIcon.name} 
+                    loading="lazy"
                     className="tech-icon-img w-14 h-14 md:w-18 md:h-18 object-contain drop-shadow-[0_0_15px_rgba(139,92,246,0.4)] transition-all duration-500 group-hover:scale-125 group-hover:drop-shadow-[0_0_25px_rgba(139,92,246,0.7)]" 
                   />
                 </div>
